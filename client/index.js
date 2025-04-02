@@ -3,7 +3,7 @@ import { select } from "d3-selection";
 import { geoAlbers, geoPath, getAlbers } from 'd3-geo';
 
 function renderMap(counties) {
-    const svg = select('body')
+    const svg = select('#map')
         .append('svg')
         .attr('width', 960)
         .attr('height', 600)
