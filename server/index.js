@@ -1,13 +1,12 @@
 import express from 'express';
 import path from 'path';
 import fs from 'fs';
-import { dirname } from 'path';
 
 const app = express();
 const port = 3245;
 const __dirname = import.meta.dirname;
 
-const clientDir = path.join(__dirname, '..', 'client');
+// const clientDir = path.join(__dirname, '..', 'client');
 const d3Dir = path.join(__dirname, '..', 'node_modules', 'd3', 'dist');
 
 console.log('d3Dir path:', d3Dir);
@@ -21,13 +20,17 @@ if (fs.existsSync(d3FilePath)) {
 
 
 // Serve static file from the client folder
-app.use(express.static(clientDir));
+// app.use(express.static(clientDir));
 
 // Serve D3 from node_modules/d3/dist
 app.use('/d3', express.static(d3Dir));
 
+app.get('/', (req, res) => {
+    res.send(express.static(d3Dir));
+})
+
 // Optional: Log to confirm paths
-console.log('Serving client from:', clientDir);
+// console.log('Serving client from:', clientDir);
 console.log('Serving D3 from:', d3Dir);
 
 
