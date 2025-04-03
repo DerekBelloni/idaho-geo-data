@@ -7,14 +7,14 @@ const app = express();
 const port = 4000;
 
 const __dirname = import.meta.dirname;
-const d3Dir = path.join(__dirname, '..', 'node_modules', 'd3', 'dist');
+// const d3Dir = path.join(__dirname, '..', 'node_modules', 'd3', 'dist');
 
-const d3FilePath = path.join(d3Dir, 'd3.js');
-if (fs.existsSync(d3FilePath)) {
-  console.log('d3.js file exists at:', d3FilePath);
-} else {
-  console.log('d3.js file NOT found at:', d3FilePath);
-}
+// const d3FilePath = path.join(d3Dir, 'd3.js');
+// if (fs.existsSync(d3FilePath)) {
+//   console.log('d3.js file exists at:', d3FilePath);
+// } else {
+//   console.log('d3.js file NOT found at:', d3FilePath);
+// }
 
 app.use(cors({
     origin: 'http://localhost:5173', 
@@ -29,7 +29,6 @@ app.use(cors({
 // app.use('/d3', express.static(d3Dir));
 
 app.get('/api/', (req, res) => {
-    console.log('req: ', req)
     res.send('what up');
 });
 
