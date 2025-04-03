@@ -3,7 +3,7 @@ import { renderMap } from "./services/IdahoMap";
 import D3Config from "./services/d3";
 
 
-const d3Dir = null;
+let d3Dir = null;
 
 document.addEventListener('DOMContentLoaded', async () => {
     const d3Config = new D3Config();
