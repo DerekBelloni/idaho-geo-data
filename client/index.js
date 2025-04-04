@@ -12,9 +12,10 @@ import D3Config from "./services/d3";
 
 document.addEventListener('DOMContentLoaded', () => {
     json('idaho_counties.geojson')
+    // json('idaho.geojson')
         .then((data) => {
             const counties = data.features;
-            console.log(counties)
+            console.log('counties: ', counties)
             renderMap(data.features);
     }).catch((error) => {
             console.error("Couldn't extract counties from geo json: ", error);
