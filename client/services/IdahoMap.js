@@ -40,6 +40,7 @@ export const renderMap = (counties) => {
             // Rotate 90 degrees clockwise: swap x and y, then flip x
             // const rotatedX = -py;
             // const rotatedY = px;
+            
             // Center the rotated map
             this.stream.point(px + 480, py + 300); // Center at (480, 300)
         }
