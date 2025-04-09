@@ -36,11 +36,12 @@ export const renderMap = (counties) => {
         point: function(x, y) {
             // First, project the geographic coordinates using geoAlbersUsa
             const [px, py] = baseProjection([x, y]);
+            console.log('x: ', x)
             // Rotate 90 degrees clockwise: swap x and y, then flip x
-            const rotatedX = -py;
-            const rotatedY = px;
+            // const rotatedX = -py;
+            // const rotatedY = px;
             // Center the rotated map
-            this.stream.point(rotatedX + 480, rotatedY + 300); // Center at (480, 300)
+            this.stream.point(px + 480, py + 300); // Center at (480, 300)
         }
     });
 
